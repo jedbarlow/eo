@@ -1,12 +1,30 @@
 #! /usr/bin/perl
 # Esperanto x-Digraph to Accent Transformer
-#   Convert Esperanto x-conventional digraphs to proper accented unicode code points.
-#   Input can be in UTF-8 encoding, output is always in UTF-8
+#   Convert Esperanto x-conventional digraphs to proper accented unicode code
+#   points.  Input can be in UTF-8 encoding, output is always in UTF-8
 #
-#   Example:
-#   > echo "ankaux" | perl accent.pl
+# Example
+#   > echo "ankaux" | perl eoaccent.pl
 #   ankaŭ
 # 
+# Integrating with vim
+#
+#   First, if you haven't already set the map leader, then add the following to
+#   your .vimrc file:
+#     let mapleader = "m"
+#
+#   Somewhere later in your .vimrc file, add the following (modify the paths,
+#   or put the perl script in the directory shown):
+#     map  <Leader>e    :.!~/.vim/eo/eoaccent.pl<CR>
+#     map  <Leader>ef   :%!~/.vim/eo/eoaccent.pl<CR>
+#     map  <Leader>ep vap:!~/.vim/eo/eoaccent.pl<CR>
+#     vmap <Leader>e     :!~/.vim/eo/eoaccent.pl<CR>
+#
+#   To use, select text in visual mode and type "me" to make accents.
+#   Alternatively, in normal mode, type "me" to accent the current line, "mep"
+#   for the current paragraph, or "mef" for the whole file.
+#
+#
 # Copyright (C) 2012 Jed Barlow
 #
 # This program is free software: you can redistribute it and/or modify
